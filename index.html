@@ -696,4 +696,64 @@ render=function(){pifoxExcelPreviousRender();const a=audit(),c=company();if(stat
 }};
 render();
 </script>
+<style>
+#pifox-company-modal{position:fixed;inset:0;z-index:100050;background:rgba(6,23,37,.7);display:flex;align-items:center;justify-content:center;padding:16px}
+#pifox-company-modal .pc-dialog{background:#fff;border-radius:17px;padding:24px;width:min(660px,100%);max-height:92vh;overflow:auto;box-shadow:0 24px 90px #07172555}
+#pifox-company-modal .pc-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 14px}
+#pifox-company-modal .pc-actions{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:22px}
+#pifox-company-modal h2{margin:0 0 8px;color:#122c40}
+#pifox-company-modal .pc-note{font-size:12px;color:#64748b;margin:0 0 16px}
+@media(max-width:600px){#pifox-company-modal .pc-grid{grid-template-columns:1fr}}
+</style>
+<script>
+/* PIFox: complete company editing and safe permanent deletion. */
+(function(){
+ const fields=[['name','Názov spoločnosti *'],['site','Prevádzka / pracovisko'],['ico','IČO'],['address','Adresa'],['contact','Kontaktná osoba'],['representative','Prítomný zástupca'],['unionRepresentative','Zástupca zamestnancov / odborov']];
+ function close(){document.getElementById('pifox-company-modal')?.remove()}
+ window.pifoxEditCompany=function(){
+  const c=company();if(!c)return;
+  close();const modal=document.createElement('div');modal.id='pifox-company-modal';
+  const inputs=fields.map(([key,label])=>'<div class="field"><label for="pc-'+key+'">'+label+'</label><input id="pc-'+key+'" '+(key==='name'?'required ':'')+'value="'+esc(c[key]||'')+'"></div>').join('');
+  modal.innerHTML='<div class="pc-dialog" role="dialog" aria-modal="true" aria-label="Úprava firmy"><h2>✏️ Upraviť '+(c.unilabs?'prevádzku Unilabs':'firmu')+'</h2><p class="pc-note">Uprav údaje a klikni na Uložiť zmeny. Existujúce audity zostanú zachované.</p><form id="pc-form"><div class="pc-grid">'+inputs+'</div><div class="pc-actions"><button type="button" class="btn danger" id="pc-delete">🗑 Vymazať '+(c.unilabs?'prevádzku':'firmu')+'</button><div class="actions"><button type="button" class="btn secondary" id="pc-cancel">Zrušiť</button><button type="submit" class="btn">✓ Uložiť zmeny</button></div></div></form></div>';
+  document.body.appendChild(modal);
+  modal.addEventListener('click',e=>{if(e.target===modal)close()});
+  modal.querySelector('#pc-cancel').onclick=close;
+  modal.querySelector('#pc-delete').onclick=()=>{close();pifoxDeleteCompany(c.id)};
+  modal.querySelector('#pc-form').onsubmit=e=>{
+   e.preventDefault();const target=db.companies.find(x=>x.id===c.id);if(!target){close();return alert('Firma už neexistuje.')} 
+   const name=modal.querySelector('#pc-name').value.trim();if(!name)return alert('Vyplň názov spoločnosti.');
+   for(const [key] of fields)target[key]=modal.querySelector('#pc-'+key).value.trim();
+   save();close();render();
+  };
+  modal.querySelector('#pc-name').focus();
+ };
+ window.pifoxDeleteCompany=function(id){
+  const c=db.companies.find(x=>x.id===id);if(!c)return;
+  const related=db.audits.filter(a=>a.companyId===id);
+  const label=c.unilabs?'prevádzku':'firmu';
+  if(!confirm('Naozaj chceš vymazať '+label+' „'+c.name+'“?\n\nSpolu s ňou sa vymaže '+related.length+' priradených auditov a návštev.\n\nPred pokračovaním odporúčame vytvoriť JSON zálohu.'))return;
+  const typed=prompt('NEVRATNÉ VYMAZANIE\nZadaj presne názov '+(c.unilabs?'prevádzky':'firmy')+' na potvrdenie:\n'+c.name);
+  if(typed!==c.name)return alert('Vymazanie bolo zrušené. Názov sa nezhodoval.');
+  db.audits=db.audits.filter(a=>a.companyId!==id);
+  db.companies=db.companies.filter(x=>x.id!==id);
+  state.company=null;state.audit=null;state.index=0;
+  save();go(c.unilabs?'unilabs':'home');
+  alert('Firma/prevádzka a jej audity boli odstránené z evidencie. Ak je zapnutá synchronizácia, počkaj na jej dokončenie.');
+ };
+ editCompany=window.pifoxEditCompany;
+ if(typeof unilabsEditSite==='function')unilabsEditSite=window.pifoxEditCompany;
+ const previous=render;
+ render=function(){
+  previous();
+  const c=company(),el=document.getElementById('content');
+  if(!c||!el||state.view!=='company')return;
+  const actions=el.querySelector('.actions');if(!actions)return;
+  const editButtons=[...actions.querySelectorAll('button')].filter(b=>/Upraviť (firmu|prevádzku)/i.test(b.textContent));
+  editButtons.forEach(b=>b.onclick=window.pifoxEditCompany);
+  if(!editButtons.length){const b=document.createElement('button');b.className='btn secondary';b.textContent='✏️ Upraviť '+(c.unilabs?'prevádzku':'firmu');b.onclick=window.pifoxEditCompany;actions.appendChild(b)}
+  if(!actions.querySelector('[data-delete-company]')){const b=document.createElement('button');b.className='btn danger';b.dataset.deleteCompany='1';b.textContent='🗑 Vymazať '+(c.unilabs?'prevádzku':'firmu');b.onclick=()=>window.pifoxDeleteCompany(c.id);actions.appendChild(b)}
+ };
+ render();
+})();
+</script>
 </body></html>
