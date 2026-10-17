@@ -1,0 +1,11 @@
+BOZP Audit – Stanislav Frýželka
+
+1. Vytvorte NOVÝ verejný repozitár na GitHube: bozp-audit-stanislav.
+2. Nahrajte súbory z tohto priečinka do koreňa nového repozitára (nie samotný ZIP).
+3. Settings > Pages > Deploy from a branch > main > /(root) > Save.
+4. Otvorte https://croshark.github.io/bozp-audit-stanislav/ a otestujte prihlásenie Stanislava.
+5. Overte vytvorenie testovacej firmy, auditu, fotografie a synchronizáciu na inom zariadení.
+
+POZOR: Nepresúvajte súbory do pôvodného repozitára bozp-audit.
+Aplikácia obsahuje iba verejný Supabase publishable key.
+Pred reálnym používaním treba overiť bezpečnostné pravidlá a synchronizáciu na testovacích dátach.
