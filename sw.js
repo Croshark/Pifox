@@ -1,8 +1,8 @@
 /* BOZP Audit – Stanislav Frýželka. Independent, path-scoped offline cache. */
-const CACHE = 'bozp-stanislav-offline-v2';
+const CACHE = 'bozp-stanislav-offline-v3';
 const APP = new URL('./', self.registration.scope);
 const INDEX = new URL('index.html', APP).href;
-const ASSETS = [INDEX, new URL('manifest.webmanifest', APP).href];
+const ASSETS = [INDEX, new URL('manifest.webmanifest', APP).href, new URL('pifox-brand.png', APP).href];
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE).then(async cache => {
     await cache.add(INDEX);
