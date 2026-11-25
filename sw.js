@@ -1,5 +1,5 @@
 /* BOZP Audit – Stanislav Frýželka. Independent, path-scoped offline cache. */
-const CACHE = 'bozp-stanislav-offline-v3';
+const CACHE = 'bozp-stanislav-offline-v4';
 const APP = new URL('./', self.registration.scope);
 const INDEX = new URL('index.html', APP).href;
 const ASSETS = [INDEX, new URL('manifest.webmanifest', APP).href, new URL('pifox-brand.png', APP).href];
