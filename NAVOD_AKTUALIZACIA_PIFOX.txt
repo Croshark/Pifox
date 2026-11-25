@@ -1,0 +1,6 @@
+PIFOX – aktualizácia modulov
+1. Pred aktualizáciou exportujte JSON zálohu pôvodného Pifoxu a zálohujte GitHub repozitár.
+2. Rozbaľte ZIP. Skopírujte obsah priečinka Pifox-main do existujúceho lokálneho repozitára Pifox (nie do ďalšieho vnoreného priečinka). Prepíšte zhodné súbory. Zachovajte .git.
+3. GitHub Desktop: skontrolujte zmeny, Commit a Push origin. Na existujúcej adrese Pifox obnovte stránku.
+4. Skontrolujte prihlásenie, pôvodné firmy, audity, dodací list a exporty. Otestujte nové moduly na skúšobnej firme.
+Kód pôvodného prihlasovania, úložiska, dodacieho listu a exportov ostáva zachovaný. Prenesené sú nové moduly, nie osobné dáta z BOZP Audit. PDF úrazov využíva externé knižnice, preto prvé použitie vyžaduje internet. Statická syntax nových JS overená; úplné testovanie v prehliadači nebolo možné z dôvodu blokovania testovacieho prostredia. Pred produkčným používaním overte cloudové ukladanie a výstupy.

@@ -1,0 +1,78 @@
+/* V21.7 Light Premium: scoped to the original four-step OOPP app. */
+body.bozp-light-v217{background:#f5f9ff!important;color:#102b4e!important}
+body.bozp-light-v217 #premiumDashboard{color:#102b4e!important}
+body.bozp-light-v217 .v17x-app{background:linear-gradient(135deg,#fff,#f1f7ff)!important;border:1px solid #d4e5f8!important;box-shadow:0 18px 42px #153d6614!important;border-radius:23px!important;padding:15px!important}
+body.bozp-light-v217 .v17x-topbar{background:linear-gradient(115deg,#fff,#eff6ff)!important;border:1px solid #d7e5f7!important;box-shadow:0 4px 16px #2a5a8b13!important}
+body.bozp-light-v217 .v17x-topbar h1,body.bozp-light-v217 .v17x-topbar strong{color:#112c4c!important}
+body.bozp-light-v217 .v17x-topbar p,body.bozp-light-v217 .v182-page-head p{color:#56728c!important}
+body.bozp-light-v217 .v17x-stepbar{background:transparent!important;gap:9px!important}
+body.bozp-light-v217 .v17x-step{background:#fbfdff!important;color:#163858!important;border:1px solid #cbdff3!important;box-shadow:0 2px 9px #143c5a0a!important}
+body.bozp-light-v217 .v17x-step strong{color:#102f52!important}
+body.bozp-light-v217 .v17x-step small{color:#6d879e!important}
+body.bozp-light-v217 .v17x-step.active{background:linear-gradient(145deg,#e4f2ff,#f7fbff)!important;border-color:#1389f4!important;box-shadow:0 0 0 1px #22a5ff43!important}
+body.bozp-light-v217 .v182-page-head{background:linear-gradient(115deg,#fff,#f0f7ff)!important;border:1px solid #cde1f5!important;box-shadow:inset 0 1px #fff!important}
+body.bozp-light-v217 .v182-page-head h2{color:#10365b!important}
+body.bozp-light-v217 .v182-eyebrow{color:#087ddc!important}
+body.bozp-light-v217 .v182-page-count{background:#e5f3ff!important;color:#075caa!important;border:1px solid #93c8f8!important}
+body.bozp-light-v217 .v182-stage-2{display:grid!important;grid-template-columns:minmax(0,1.04fr) minmax(0,.96fr)!important;gap:16px!important;align-items:start!important}
+body.bozp-light-v217 .v182-stage-2>.v17x-card{background:#fff!important;border:1px solid #d5e5f4!important;box-shadow:0 8px 24px #123f6410!important;border-radius:20px!important}
+body.bozp-light-v217 .v182-stage-2>.v17x-card:first-child{padding:8px!important}
+body.bozp-light-v217 .v182-stage-2 #v17-selected{background:#fff!important;padding:18px!important}
+body.bozp-light-v217 .v213-wheel-panel{background:linear-gradient(145deg,#fff,#f6faff)!important;border-color:#d5e7f7!important}
+body.bozp-light-v217 .v213-wheel-head h3,body.bozp-light-v217 #v17-selected h2,body.bozp-light-v217 #v17-selected h3{color:#0c2e54!important}
+body.bozp-light-v217 .v213-kicker,body.bozp-light-v217 .v213-risk-heading{color:#087fe0!important}
+body.bozp-light-v217 .v213-wheel-head p,body.bozp-light-v217 #v17-selected .v17x-head p{color:#5d7890!important}
+body.bozp-light-v217 .v213-count,body.bozp-light-v217 #v17-selected .tiny{background:#e9f4ff!important;color:#0768bb!important;border:1px solid #a4d3ff!important}
+body.bozp-light-v217 .v213-wheel-frame{background:transparent!important}
+body.bozp-light-v217 .v213-segment.idle .v213-product{opacity:1!important;filter:drop-shadow(0 7px 9px #142d4538)!important}
+body.bozp-light-v217 .v213-seg-shape{fill:#f3f9ff!important;stroke:#3baefa!important;stroke-width:5!important;filter:none!important}
+body.bozp-light-v217 .v213-segment.recommended .v213-seg-shape{fill:#fff6e7!important;stroke:#f5a623!important;stroke-width:7!important}
+body.bozp-light-v217 .v213-segment.selected .v213-seg-shape{fill:#e3f7ff!important;stroke:#05baf4!important;stroke-width:8!important;filter:url(#v213cyanGlow)!important}
+body.bozp-light-v217 .v213-segment.current .v213-seg-shape{stroke:#168bed!important;stroke-width:9!important}
+body.bozp-light-v217 .v213-center-light{fill:#fff!important}
+body.bozp-light-v217 .v213-center-text{fill:#0d315d!important}
+body.bozp-light-v217 .v213-shield-outline{stroke:#143c68!important}
+body.bozp-light-v217 .v213-choice-row{background:transparent!important}
+body.bozp-light-v217 .v213-small-choice{background:linear-gradient(#fff,#f3f8fe)!important;border:1px solid #c9ddf1!important;color:#164064!important}
+body.bozp-light-v217 .v213-small-choice.selected{background:linear-gradient(#e3f8fc,#d5f1ff)!important;border-color:#03badc!important;color:#0a4b69!important;box-shadow:0 0 0 1px #03badc40!important}
+body.bozp-light-v217 .v213-small-choice.recommended{background:#fff6e7!important;border-color:#efb24d!important;color:#895409!important}
+body.bozp-light-v217 .v213-small-choice img{filter:none!important;opacity:1!important}
+body.bozp-light-v217 .v213-small-choice.current{outline-color:#2195f3!important}
+body.bozp-light-v217 .v213-risks{background:#eff7ff!important;border-color:#cfe4f7!important}
+body.bozp-light-v217 .v213-risk-tag{background:#dceeff!important;color:#17629b!important;border-color:#b4d8f8!important}
+body.bozp-light-v217 .v213-disclaimer{color:#617f9b!important}
+body.bozp-light-v217 .v213-inspector-bar{color:#077cbd!important;border-color:#d7e7f5!important}
+body.bozp-light-v217 .v213-inspector-bar strong{color:#265778!important}
+body.bozp-light-v217 #v17-selected .v183-approval-actions{background:#f1f8ff!important;border:1px solid #d4e6f5!important}
+body.bozp-light-v217 #v17-selected .v183-approval-actions label{color:#275573!important}
+body.bozp-light-v217 .v17x-selected-grid .v17x-ppe{background:#f6faff!important;border:1px solid #d4e3f1!important}
+body.bozp-light-v217 .v17x-selected-grid .v17x-ppe strong{color:#123657!important}
+body.bozp-light-v217 .v17x-selected-grid .v17x-ppe small{color:#607e98!important}
+body.bozp-light-v217 #bc-dynamic-detail{background:#f5faff!important;border:1px solid #abd4f4!important;box-shadow:none!important}
+body.bozp-light-v217 #bc-dynamic-detail h3,body.bozp-light-v217 #bc-dynamic-detail .bc-variant-name{color:#133659!important}
+body.bozp-light-v217 #bc-dynamic-detail .bc-panel-desc{background:#e7f3ff!important;color:#28577b!important;border-color:#bbddf5!important}
+body.bozp-light-v217 #bc-dynamic-detail .bc-panel-desc b{color:#0c6cb5!important}
+body.bozp-light-v217 #bc-dynamic-detail .bc-panel-desc p,body.bozp-light-v217 #bc-dynamic-detail .bc-panel-current,body.bozp-light-v217 #bc-dynamic-detail .bc-variant small{color:#53768f!important}
+body.bozp-light-v217 #bc-dynamic-detail .bc-variant{background:#fff!important;border:1px solid #cadfee!important}
+body.bozp-light-v217 #bc-dynamic-detail .bc-variant.chosen{border-color:#03b6d5!important;box-shadow:0 0 0 2px #03b6d53b!important}
+body.bozp-light-v217 #v17-selected details,body.bozp-light-v217 #v17-selected .v17x-note{background:#f4f9ff!important;border-color:#d3e6f7!important;color:#3d6080!important}
+body.bozp-light-v217 #v17-selected .v17x-products .be-tile{background:#fff!important;border-color:#d2e3f3!important}
+body.bozp-light-v217 #v17-selected .v17x-products .be-tile.selected{background:#e8faff!important;border-color:#00b9d1!important}
+body.bozp-light-v217 #v17-selected .v17x-products .be-tile .be-product-name{color:#153955!important}
+body.bozp-light-v217 #v17-selected .v17x-products .be-tile .be-product-note{color:#577e98!important}
+body.bozp-light-v217 .v182-bottom-nav{background:#f4faff!important;border:1px solid #d2e3f4!important;border-radius:13px!important}
+body.bozp-light-v217 .v182-bottom-nav span{color:#48708f!important}
+@media(max-width:800px){body.bozp-light-v217 .v182-stage-2{grid-template-columns:1fr!important}}
+
+/* V21.8 fix: the entire left OOPP card must be light, not only its interior. */
+body.bozp-light-v217 .v182-stage-2>.v17x-card:first-child,
+body.bozp-light-v217 .v182-stage-2>.v17x-card:first-child .v213-wheel-panel,
+body.bozp-light-v217 #v213-wheel-panel,
+body.bozp-light-v217 .v213-wheel-shell,
+body.bozp-light-v217 .v213-wheel-left,
+body.bozp-light-v217 .v213-wheel-container,
+body.bozp-light-v217 .v213-wheel-surface{background:#fff!important;background-image:none!important;color:#123657!important;border-color:#d4e6f8!important;box-shadow:0 8px 23px #123b6310!important}
+body.bozp-light-v217 .v182-stage-2>.v17x-card:first-child::before,
+body.bozp-light-v217 .v182-stage-2>.v17x-card:first-child::after{background:none!important}
+body.bozp-light-v217 .v213-wheel-head,body.bozp-light-v217 .v213-wheel-content{background:transparent!important;color:#123657!important}
+body.bozp-light-v217 .v213-wheel-wrap{background:#fff!important}

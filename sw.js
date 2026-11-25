@@ -1,5 +1,5 @@
 /* BOZP Audit – Stanislav Frýželka. Independent, path-scoped offline cache. */
-const CACHE = 'bozp-stanislav-offline-v1';
+const CACHE = 'bozp-stanislav-offline-v2';
 const APP = new URL('./', self.registration.scope);
 const INDEX = new URL('index.html', APP).href;
 const ASSETS = [INDEX, new URL('manifest.webmanifest', APP).href];
@@ -24,10 +24,10 @@ self.addEventListener('fetch', event => {
     event.respondWith(fetch(req).then(response => {
       if (response.ok) {
         const copy = response.clone();
-        event.waitUntil(caches.open(CACHE).then(cache => cache.put(INDEX, copy)));
+        event.waitUntil(caches.open(CACHE).then(cache => cache.put(req, copy)));
       }
       return response;
-    }).catch(() => caches.match(INDEX).then(cached => cached || Response.error())));
+    }).catch(() => caches.match(req).then(cached => cached || (url.pathname === APP.pathname || url.href === INDEX ? caches.match(INDEX).then(x=>x||Response.error()) : Response.error()))));
     return;
   }
   event.respondWith(caches.match(req).then(cached => cached || fetch(req).then(response => {

@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="sk" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>VTZ / TZ</title>
+  <link rel="stylesheet" href="vtz.css?v=22.40">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">EVIDENCIA TECHNICKÝCH ZARIADENÍ</p>
+        <h1>VTZ / TZ</h1>
+        <p class="subtitle">Zariadenia, kontroly, revízie a termíny na jednom mieste.</p>
+      </div>
+      <div class="top-actions">
+        <label class="search-box" aria-label="Hľadať zariadenie">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m16 16 5 5"/></svg>
+          <input id="globalSearch" type="search" placeholder="Hľadať názov, číslo, prevádzku…">
+        </label>
+        <button class="btn ghost" id="openLibrary"><svg viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H11v16H6.5A2.5 2.5 0 0 0 4 21.5zM20 5.5A2.5 2.5 0 0 0 17.5 3H13v16h4.5a2.5 2.5 0 0 1 2.5 2.5z"/></svg>Lehoty kontrol</button>
+        <label class="btn ghost file-btn"><svg viewBox="0 0 24 24"><path d="M12 16V4m-5 5 5-5 5 5M5 20h14"/></svg>Importovať<input id="importFile" type="file" accept=".json,.csv" hidden></label>
+        <button class="btn primary" id="newDevice"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>Nové zariadenie</button>
+      </div>
+    </header>
+
+    <section class="overview" aria-label="Prehľad zariadení">
+      <article class="metric accent"><span class="metric-icon"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M8 9h8M8 14h5"/></svg></span><div><strong id="kpiTotal">0</strong><span>Všetky zariadenia</span></div></article>
+      <article class="metric ok"><span class="metric-icon"><svg viewBox="0 0 24 24"><path d="m7 12 3 3 7-7"/><path d="M12 2 4 5v6c0 5 3.4 9 8 11 4.6-2 8-6 8-11V5z"/></svg></span><div><strong id="kpiOk">0</strong><span>V termíne</span></div></article>
+      <article class="metric warning wide"><span class="metric-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v6l4 2"/></svg></span><div class="expiry"><b>Končiace kontroly</b><span>do 90 dní <strong id="kpi90">0</strong></span><span>do 60 dní <strong id="kpi60">0</strong></span><span>do 30 dní <strong id="kpi30">0</strong></span></div></article>
+      <article class="metric danger"><span class="metric-icon"><svg viewBox="0 0 24 24"><path d="M12 3 2.8 20h18.4z"/><path d="M12 9v5m0 3h.01"/></svg></span><div><strong id="kpiLate">0</strong><span>Po termíne / nevyhovuje</span></div></article>
+      <article class="metric neutral"><span class="metric-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v5m0 3h.01"/></svg></span><div><strong id="kpiMissing">0</strong><span>Chýba kontrola / termín</span></div></article>
+      <article class="metric neutral"><span class="metric-icon"><svg viewBox="0 0 24 24"><path d="M4 7h16M9 7V4h6v3m-9 0 1 14h10l1-14"/></svg></span><div><strong id="kpiRetired">0</strong><span>Vyradené</span></div></article>
+    </section>
+
+    <p class="overview-note">Končiace kontroly sú zahrnuté aj v počte zariadení v termíne.</p>
+
+    <section class="filters" id="filterPanel">
+      <label>Firma<select id="companyFilter"><option value="">Všetky firmy</option></select></label>
+      <label>Prevádzka<input id="siteFilter" placeholder="Názov prevádzky"></label>
+      <label>Typ<select id="typeFilter"><option value="">Všetky typy</option></select></label>
+      <label>Stav<select id="statusFilter"><option value="">Všetky stavy</option><option value="active">V prevádzke</option><option value="out">Mimo prevádzky</option><option value="retired">Vyradené</option></select></label>
+      <label>Platnosť<select id="validityFilter"><option value="">Všetko</option><option value="ok">V termíne</option><option value="expiring">Končí do 90 dní</option><option value="late">Po termíne / nevyhovuje</option><option value="missing">Chýba termín</option></select></label>
+      <label>Technik<input id="technicianFilter" placeholder="Meno technika"></label>
+      <button class="btn ghost reset" id="resetFilters">Resetovať</button>
+    </section>
+
+    <nav class="tabs" id="typeTabs" aria-label="Kategórie zariadení"></nav>
+
+    <section class="list-card">
+      <div class="list-toolbar">
+        <div><h2 id="listTitle">Všetky zariadenia</h2><p id="resultSummary">Zobrazené 0 zariadení</p></div>
+        <div class="toolbar-actions"><button class="btn compact ghost" id="exportCsv">Export CSV</button><button class="btn compact ghost" id="downloadTemplate">Vzor importu</button></div>
+      </div>
+      <div id="deviceList" class="device-list"></div>
+      <div class="empty-state" id="emptyState" hidden>
+        <span><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M8 9h8M8 14h5"/></svg></span>
+        <h3>Žiadne zariadenia nezodpovedajú výberu</h3>
+        <p>Zmeňte filter alebo pridajte prvé zariadenie.</p>
+        <button class="btn primary" id="emptyNew">Pridať zariadenie</button>
+      </div>
+      <footer class="pager"><span id="pageSummary">Zobrazené 0 – 0 z 0</span><label>Riadkov na stránku <select id="pageSize"><option>10</option><option selected>15</option><option>25</option><option>50</option></select></label></footer>
+    </section>
+  </main>
+
+  <div class="modal-backdrop" id="deviceModal" hidden>
+    <section class="modal device-modal" role="dialog" aria-modal="true" aria-labelledby="deviceModalTitle">
+      <header><div><p class="eyebrow">KARTA ZARIADENIA</p><h2 id="deviceModalTitle">Nové zariadenie</h2></div><button class="icon-btn close-modal" aria-label="Zavrieť">×</button></header>
+      <form id="deviceForm">
+        <input id="deviceId" type="hidden">
+        <div class="form-section"><h3>1. Identifikácia</h3><div class="form-grid">
+          <label>Firma *<select id="deviceCompany" required></select></label>
+          <label>Prevádzka / umiestnenie *<input id="deviceSite" required placeholder="Výrobná hala, kotolňa…"></label>
+          <label class="span2">Názov zariadenia *<input id="deviceName" required placeholder="Napr. vzdušník kompresora K1"></label>
+          <label>Evidenčné číslo *<input id="deviceNumber" required placeholder="VTZ-001"></label>
+          <label>Výrobné číslo<input id="serialNumber" placeholder="Zo štítku zariadenia"></label>
+          <label>Výrobca / typ<input id="manufacturer" placeholder="Výrobca a model"></label>
+          <label>Rok výroby<input id="yearMade" inputmode="numeric" maxlength="4" placeholder="2024"></label>
+        </div></div>
+        <div class="form-section"><div class="section-heading"><h3>2. Zatriedenie</h3><button type="button" class="text-btn" id="openCatalogFromForm">Vyhľadať v katalógu →</button></div><div class="form-grid">
+          <label>Druh zariadenia *<select id="deviceType" required></select></label>
+          <label>Skupina<select id="deviceGroup"><option value="">Neurčená</option><option>A</option><option>B</option><option>C</option></select></label>
+          <label>Kód podľa prílohy<input id="classCode" placeholder="Napr. A/b/1"></label>
+          <label class="span2">Vybrané zatriedenie<input id="classTitle" readonly placeholder="Vyberte v katalógu alebo doplňte kód"></label>
+          <div class="classification-info span2" id="classificationInfo">Zatriedenie určuje rozsah skúšok, lehoty aj osobu oprávnenú úkon vykonať.</div>
+        </div></div>
+        <div class="form-section"><h3>3. Kontrola a termín</h3><div class="form-grid">
+          <label>Druh úkonu<select id="inspectionType"><option>Odborná prehliadka</option><option>Odborná skúška</option><option>Opakovaná úradná skúška</option><option>Kontrola</option><option>Revízia</option><option>Iný úkon</option></select></label>
+          <label>Výsledok<select id="inspectionResult"><option value="suitable">Vyhovuje</option><option value="conditional">Vyhovuje s podmienkou</option><option value="unsuitable">Nevyhovuje</option><option value="unknown">Neurčený</option></select></label>
+          <label>Dátum posledného úkonu<input id="lastInspection" type="date"></label>
+          <label>Nasledujúci termín<input id="nextInspection" type="date"></label>
+          <label>Interval<select id="intervalPreset"><option value="">Ručne / podľa dokumentácie</option><option value="1d">1 deň</option><option value="7d">7 dní</option><option value="1m">1 mesiac</option><option value="3m">3 mesiace</option><option value="6m">6 mesiacov</option><option value="12m">12 mesiacov</option><option value="24m">24 mesiacov</option><option value="36m">3 roky</option><option value="48m">4 roky</option><option value="60m">5 rokov</option><option value="72m">6 rokov</option><option value="120m">10 rokov</option></select></label>
+          <label>Technik / vykonávateľ<input id="technician" placeholder="Meno alebo organizácia"></label>
+          <label class="span2">Právny alebo technický podklad<input id="legalBasis" placeholder="Napr. vyhláška č. 508/2009 Z. z., príloha č. 5"></label>
+        </div><div class="date-warning" id="dateWarning" hidden></div></div>
+        <div class="form-section"><h3>4. Zodpovednosť a dokumentácia</h3><div class="form-grid">
+          <label>Zodpovedná osoba<input id="responsible" placeholder="Osoba u prevádzkovateľa"></label>
+          <label>Prevádzkový stav<select id="deviceStatus"><option value="active">V prevádzke</option><option value="out">Mimo prevádzky</option><option value="retired">Vyradené</option></select></label>
+          <label class="span2">Poznámka / doklady<textarea id="deviceNote" rows="3" placeholder="Číslo správy, umiestnenie dokumentácie, osobitné podmienky…"></textarea></label>
+        </div></div>
+        <footer><button type="button" class="btn danger-outline" id="deleteDevice" hidden>Vymazať</button><span></span><button type="button" class="btn ghost close-modal">Zrušiť</button><button type="submit" class="btn primary">Uložiť zariadenie</button></footer>
+      </form>
+    </section>
+  </div>
+
+  <div class="modal-backdrop" id="libraryModal" hidden>
+    <section class="modal library-modal" role="dialog" aria-modal="true" aria-labelledby="libraryTitle">
+      <header class="sticky"><div><p class="eyebrow">LEGISLATÍVNA KNIŽNICA</p><h2 id="libraryTitle">Lehoty kontrol a skúšok</h2></div><button class="icon-btn close-library" aria-label="Zavrieť">×</button></header>
+      <div class="library-controls sticky-controls">
+        <div class="segmented"><button class="active" data-lib="vtz">VTZ / TZ</button><button data-lib="fire">Požiarne zariadenia</button></div>
+        <label>Druh zariadenia<select id="libraryKind"></select></label>
+        <label>Vyhľadať v knižnici<input id="librarySearch" type="search" placeholder="Názov, skupina, úkon alebo predpis…"></label>
+      </div>
+      <div class="library-intro"><p>Nájdite zariadenie, porovnajte lehoty a preneste vybraný úkon do karty zariadenia.</p><details><summary>Ako používať tento prehľad</summary><p>Najprv overte zatriedenie podľa parametrov zariadenia. Hviezdička alebo poznámka znamená, že interval môže meniť výrobca, prevádzka, vonkajší vplyv alebo osobitný predpis. Pri rozpore použite kratšiu lehotu a konkrétny zdroj zapíšte do karty.</p></details></div>
+      <div id="libraryResults" class="library-results"></div>
+      <footer class="legal-footer">OP = odborná prehliadka · OS = odborná skúška · OÚS = opakovaná úradná skúška · OPO = oprávnená právnická osoba · RT = revízny technik · TPV = technické podmienky výrobcu. Prehľad nenahrádza posúdenie konkrétneho zariadenia.</footer>
+    </section>
+  </div>
+
+  <script src="../vsetkovedko/vsetkovedko-vtz-catalog.js?v=22.40"></script>
+  <script src="vtz-data.js?v=22.40"></script>
+  <script src="vtz.js?v=22.40"></script>
+</body>
+</html>

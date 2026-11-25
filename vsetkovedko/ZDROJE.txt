@@ -1,0 +1,117 @@
+VŠETKOVEDKO – zdroje prvej témy, overenie 3. 11. 2026
+
+STN 26 9010, vydanie 01.10.1993, v oficiálnom katalógu označená ako platná:
+https://normy.normoff.gov.sk/vyhladavanie/?classSign=269010&search=on
+Obsah výpočtov: dodaný 8-stranový sken „šírky ciest a uličiek.pdf“.
+Priechodové uličky: čl. 3.1.1–3.1.6, str. 2–4.
+Prejazd techniky bez chodcov: čl. 3.3.1.1–3.3.1.2, str. 4–5.
+Zakladanie čelným VZV: čl. 3.3.2, str. 5. Rozhoduje aj výrobca a konkrétny náklad.
+Hlavné dopravné cesty: čl. 3.4.1–3.4.2, str. 6–7.
+Výšky: čl. 4.1–4.2, str. 8.
+
+Komunikácie pre chodcov v sklade, verejné stanovisko NIP s odkazom na STN 73 5105 čl. 7.7.1:
+https://www.ip.gov.sk/rady-informacie/stanoviska-nip/oznacenie-komunikacie-chodcov-priestore-skladu.html
+Nejde o overenie úplného aktuálneho textu STN 73 5105; pri návrhu treba jeho použiteľnosť preveriť.
+
+NV SR č. 391/2006 Z. z. – aktuálna časová verzia od 15.01.2023,
+§ 3 a príloha č. 1 body 4 a 12:
+https://www.slov-lex.sk/ezbierky/pravne-predpisy/SK/ZZ/2006/391/
+
+NV SR č. 387/2006 Z. z. – bezpečnostné a zdravotné označenie,
+príloha č. 5, body 1 a 2, bezpečnostné farby podľa prílohy č. 1:
+https://www.slov-lex.sk/ezbierky/pravne-predpisy/SK/ZZ/2006/387/
+
+Vyhláška MV SR č. 94/2004 Z. z. – únikové cesty, § 68–69,
+časová verzia od 01.01.2019:
+https://static.slov-lex.sk/static/SK/ZZ/2004/94/20190101.html
+Požiadavku na konkrétnu stavbu preberaj z použiteľného riešenia PBS.
+
+OPRAVY OPROTI ILUSTRAČNÉMU REFERENČNÉMU OBRÁZKU
+STN 26 9010 sa volá Manipulácia s materiálom. Šírky a výšky ciest a uličiek.
+Vyhláška č. 38/2026 Z. z. sa týka horľavých kvapalín; nie je všeobecným zdrojom šírky únikových ciest.
+Preto je vo VŠETKOVEDKOVI použitá vyhláška č. 94/2004 Z. z.
+Úniková cesta nemá univerzálne minimum 1,20 m.
+Príloha č. 5 NV 387/2006 neurčuje všeobecnú šírku značkovacej čiary 50/75/100 mm.
+Neplatí univerzálne rozdelenie žltá pre vozíky a biela len pre chodcov.
+
+GRAFIKA
+warehouse.webp: nová generovaná ilustračná skladová scéna, vytvorená pre tento modul vstavaným ImageGen.
+Zadanie: realistický sklad, žltý VZV s obsluhou, oddelený chodník so zábranou,
+pracovník v OOPP, voľný zelený východ, bez textov a rozmerov. Odborné popisky sú samostatné HTML.
+Ilustrácia nie je technickým projektom a sama nedokazuje bezpečnosť pracoviska.
+
+ROZŠÍRENIE V22.1 – VÝŠKY A SKLADOVANIE, 3. 11. 2026
+NV SR č. 392/2006 Z. z., príloha č. 2, body 5.1 až 5.3:
+https://www.slov-lex.sk/ezbierky/pravne-predpisy/SK/ZZ/2006/392/
+Pracovné prostriedky pri dočasnej práci vo výške, prednosť kolektívnych opatrení a rebríky.
+Vyhláška č. 147/2013 Z. z., verzia účinná od 01.06.2015:
+https://static.slov-lex.sk/static/SK/ZZ/2013/147/20150601.html
+Rozsah podľa § 1; príloha č. 1 bod 4.7 (rebrík), príloha č. 6 bod 1.1 a body 7.3 až 7.5.
+Príslušnosť činnosti k rozsahu predpisu musí určiť používateľ, nie iba výška pracoviska.
+Ochranné pásmo modelované pre výšky od 3 m. Pod 3 m sa nevydáva nulový odstup.
+Rozšírenie pri kladke/kladkostroji sa vzťahuje na pôdorys bremena, nejde o automatické
+pripočítanie 1 m k ľubovoľnej hranici pracoviska.
+
+STN EN 363, platné vydanie 01.10.2019:
+https://normy.normoff.gov.sk/norma/129383/
+STN EN 131-1+A2, platné vydanie 01.03.2026:
+https://normy.normoff.gov.sk/norma/141827/
+Úplné znenia týchto noriem neboli dodané; uvedená je identifikácia a účel normy.
+
+Vyhláška č. 59/1982 Zb., § 232, verzia účinná od 30.11.1990:
+https://static.slov-lex.sk/static/SK/ZZ/1982/59/19901130.html
+Sklady a regály: označenie, stabilita a uličky. Minimum 800 mm medzi regálmi/stohmi
+nie je univerzálnou šírkou každej komunikácie. Ďalšie požiadavky môžu vyžadovať väčšiu šírku.
+STN 26 9030 (12/1993), katalóg uvádza platná:
+https://normy.normoff.gov.sk/norma/56583/
+STN EN 15635 (06/2009), katalóg uvádza platná:
+https://normy.normoff.gov.sk/vyhladavanie/?classSign=269502&search=on
+Úplné texty týchto noriem neboli dodané. Nepriraďujeme normové kategórie poškodenia,
+normové tolerancie ani pevné intervaly kontrol na základe samotného katalógu.
+Zaťaženie bunky a poľa je samostatné aritmetické porovnanie s údajmi používateľa.
+Neprepočítava únosnosť konštrukcie, kotvenia, podlahy ani rozloženie reakcií.
+
+NOVÁ GRAFIKA V22.1
+roads.svg, heights.svg a storage.svg sú vlastné programovo vytvorené vektorové ilustrácie.
+Interaktívne schémy rebríka, regálovej bunky a komunikácií sú SVG generované priamo v module.
+Nová verzia nepoužíva warehouse.webp. Starý obrazový súbor môže zostať v repozitári bez použitia.
+
+V22.4 – VTZ A ŠKOLENIA (overené 3. 11. 2026)
+508/2009 Z. z. – § 2, § 4, §§ 15–24, príloha 1 a 11:
+https://static.slov-lex.sk/static/SK/ZZ/2009/508/20140901.html
+124/2006 Z. z. – § 7, § 12 ods. 2 písm. d), § 16, § 27,
+prílohy 1a, 2, 2a (aktuálne použité znenie od 1. 7. 2025):
+https://static.slov-lex.sk/static/SK/ZZ/2006/124/20250701.html
+356/2007 Z. z. – rozsah vzdelávania a dokumentácia, znenie od 1. 3. 2023:
+https://static.slov-lex.sk/static/SK/ZZ/2007/356/20230301.html
+121/2002 Z. z. – §§ 20–23, školenia PO a príprava hliadok:
+https://static.slov-lex.sk/static/SK/ZZ/2002/121/20150901.html
+314/2001 Z. z. – § 9 ods. 2 písm. c); použité znenie do 31. 12. 2026:
+https://static.slov-lex.sk/static/SK/ZZ/2001/314/20250401.print.html
+NIP – motorové vozíky, preukazy, AOP a opakované oboznamovanie:
+https://www.ip.gov.sk/bozp/doprava/motorove-voziky/odpovede-najcastejsie-otazky-k-preukazom-obsluhy-motorovych-vozikov.html
+
+Vydávanie preukazov sa riadi aktuálnym § 16 zákona 124/2006;
+staršie znenie vyhlášky 508/2009 o vydávaní preukazov IP nie je bez
+porovnania s aktuálnym zákonom prevzaté. AOP podľa § 16 ods. 8 sa
+nepripisuje automaticky dokladom RT podľa § 16 ods. 1 písm. c).
+V22.7 – ÚPLNÝ KATALÓG ZATriedenia A KONKRÉTNE ŠKOLENIA
+Overené 3. 11. 2026 podľa vyššie uvedených účinných znení Slov-Lex.
+Nový katalóg nahrádza obmedzeného sprievodcu V22.4: obsahuje všetkých
+87 koncových položiek prílohy č. 1 vyhlášky 508/2009, vrátane skupiny C.
+Pri každej položke sú kritériá, jednoduché vysvetlenie a príklad.
+Ide o katalóg na posúdenie podľa údajov zariadenia, nie automatické
+zatriedenie bez znalosti technickej dokumentácie a prostredia.
+
+37 kariet činností odlišuje základnú odbornú prípravu, všeobecné opakované
+oboznamovanie a AOP tam, kde sa uplatňuje. Uvádza školiteľa, podmienky
+pre BT, overenie vedomostí, vydanie dokladu a zákonné lehoty.
+Pri vlastnom zamestnancovi a externom BT sú odlíšené podmienky § 7
+zákona 124/2006. Poverenie klienta nenahrádza oprávnenie externého
+poskytovateľa na výchovu a vzdelávanie v príslušnom rozsahu.
+
+Úplné znenia príslušných STN na odborné preškolenie neboli dodané.
+Karty preto neuvádzajú neoverené univerzálne ročné lehoty. Konkrétny
+normový interval musí byť doplnený z použiteľnej normy a dokumentácie.
+Ilustrácie sú pôvodné SVG, bez mierky; nie sú projektom pracoviska,
+revíziou ani dokladom odbornej spôsobilosti.
