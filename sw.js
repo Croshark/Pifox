@@ -1,12 +1,14 @@
 /* BOZP Audit – Stanislav Frýželka. Independent, path-scoped offline cache. */
-const CACHE = 'bozp-stanislav-offline-v4';
+const CACHE = 'bozp-stanislav-offline-v5-unilabs';
 const APP = new URL('./', self.registration.scope);
 const INDEX = new URL('index.html', APP).href;
-const ASSETS = [INDEX, new URL('manifest.webmanifest', APP).href, new URL('pifox-brand.png', APP).href];
+const ASSETS = [
+  'manifest.webmanifest', 'pifox-brand.png', 'pifox-unilabs-data.js', 'pifox-unilabs.js', 'pifox-unilabs.css'
+].map(path => new URL(path, APP).href);
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE).then(async cache => {
     await cache.add(INDEX);
-    await Promise.allSettled(ASSETS.slice(1).map(url => cache.add(url)));
+    await Promise.allSettled(ASSETS.map(url => cache.add(url)));
   }).then(() => self.skipWaiting()));
 });
 self.addEventListener('activate', event => {

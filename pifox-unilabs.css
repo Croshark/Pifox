@@ -1,0 +1,113 @@
+:where(.pu-directory, .pu-in-company) {
+  --pu-ink: #17344b;
+  --pu-muted: #4a637a;
+  --pu-border: #cbdce8;
+  --pu-card: #fff;
+  --pu-soft: #edf4fa;
+  --pu-accent: #145683;
+  color: var(--pu-ink);
+}
+html[data-bozp-theme=dark] :where(.pu-directory, .pu-in-company) {
+  --pu-ink: #eaf5ff;
+  --pu-muted: #b1c7da;
+  --pu-border: #36556e;
+  --pu-card: #102b44;
+  --pu-soft: #183951;
+  --pu-accent: #a6daff;
+}
+.pu-directory { max-width: 1320px; min-width: 0; }
+.pu-banner { margin-bottom: 15px; padding: clamp(18px, 3vw, 32px); }
+.pu-banner h1 { margin: 0 0 5px; font-size: clamp(28px, 4vw, 42px); }
+.pu-banner .pu-employer { margin-top: 9px; font-size: .82rem; }
+.pu-controls {
+  display: grid;
+  grid-template-columns: minmax(200px, 1.8fr) repeat(2, minmax(135px, 1fr));
+  gap: 12px;
+  border: 1px solid var(--pu-border);
+  border-radius: 13px;
+  background: var(--pu-card);
+  padding: 13px;
+}
+.pu-controls label { min-width: 0; display: grid; gap: 5px; font-size: .77rem; font-weight: 650; color: var(--pu-muted); }
+.pu-controls input, .pu-controls select {
+  min-width: 0;
+  min-height: 42px;
+  width: 100%;
+  color: var(--pu-ink);
+  background: var(--pu-soft);
+  border: 1px solid var(--pu-border);
+  border-radius: 8px;
+  font-size: 1rem;
+  padding: 7px 9px;
+}
+.pu-controls input::placeholder { color: var(--pu-muted); }
+.pu-directory :is(button, input, select, summary):focus-visible, .pu-in-company summary:focus-visible {
+  outline: 3px solid #dc6f3b;
+  outline-offset: 2px;
+}
+.pu-result-line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 7px 14px;
+  margin: 11px 0 20px;
+}
+.pu-result-line p { margin: 0; font-size: .84rem; color: var(--pu-muted); }
+.pu-city + .pu-city { margin-top: 23px; }
+.pu-city h2 { margin: 0 0 8px; display: flex; align-items: center; gap: 7px; font-size: 1.18rem; }
+.pu-city h2 span, .pu-status, .pu-tag {
+  display: inline-block;
+  border-radius: 20px;
+  padding: 4px 8px;
+  font-size: .7rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.pu-city h2 span, .pu-tag { color: var(--pu-muted); background: var(--pu-soft); }
+.pu-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; align-items: start; }
+.pu-site {
+  min-width: 0;
+  padding: 14px;
+  border: 1px solid var(--pu-border);
+  border-radius: 12px;
+  background: var(--pu-card);
+  overflow-wrap: anywhere;
+}
+.pu-chips { display: flex; flex-wrap: wrap; gap: 5px; align-items: flex-start; }
+.pu-own { color: #086450; background: #d8f2e9; }
+.pu-registry { color: #4b3781; background: #ebe6fa; }
+.pu-internal { color: #65410a; background: #fbe9c3; }
+.pu-archive { color: #5f4d52; background: #eee7e9; }
+.pu-custom { color: #1e5482; background: #dceeff; }
+.pu-site h3 { margin: 8px 0 3px; font-size: 1rem; line-height: 1.32; }
+.pu-address { margin: 0; font-size: .89rem; font-weight: 600; color: var(--pu-muted); }
+.pu-more {
+  margin-top: 10px;
+  padding: 8px 10px;
+  border: 1px solid var(--pu-border);
+  background: var(--pu-soft);
+  border-radius: 8px;
+  color: var(--pu-ink);
+  overflow-wrap: anywhere;
+}
+.pu-more summary { cursor: pointer; color: var(--pu-accent); font-size: .83rem; font-weight: 700; line-height: 1.4; }
+.pu-detail { font-size: .83rem; line-height: 1.5; }
+.pu-detail h4 { margin: 12px 0 3px; font-size: .87rem; }
+.pu-detail ul { padding-inline-start: 18px; margin: 5px 0 8px; }
+.pu-detail small, .pu-source, .pu-audits { color: var(--pu-muted); }
+.pu-note { margin: 9px 0 5px; }
+.pu-source { margin: 8px 0 2px; font-size: .76rem; }
+.pu-files span, .pu-files small { display: block; }
+.pu-files li + li { margin-top: 6px; }
+.pu-actions:not(:empty) { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 10px; align-items: center; }
+.pu-actions div { display: flex; flex-wrap: wrap; gap: 5px 8px; align-items: center; }
+.pu-empty { color: var(--pu-muted); padding: 12px 15px; border: 1px dashed var(--pu-border); border-radius: 9px; }
+.pu-in-company { margin: 12px 0; }
+.pu-visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+
+@media (max-width: 680px) {
+  .pu-grid { grid-template-columns: 1fr; }
+  .pu-controls { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .pu-controls label:first-child { grid-column: 1 / -1; }
+}
