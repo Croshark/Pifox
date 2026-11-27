@@ -1,0 +1,134 @@
+.ul-directory {
+  --ul-text: #18324a;
+  --ul-muted: #49627a;
+  --ul-line: #d5e3ee;
+  --ul-surface: #fff;
+  --ul-control: #edf4fb;
+  --ul-link: #12578a;
+  color: var(--ul-text);
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  min-width: 0;
+  margin: 0 auto;
+  max-width: 1400px;
+}
+html[data-bozp-theme="dark"] .ul-directory {
+  --ul-text: #eef6ff;
+  --ul-muted: #abc2d8;
+  --ul-line: #33516c;
+  --ul-surface: #102b44;
+  --ul-control: #193950;
+  --ul-link: #9bd8ff;
+}
+.ul-directory *, .ul-directory *::before, .ul-directory *::after { box-sizing: border-box; }
+.ul-directory a { color: var(--ul-link); text-underline-offset: .2em; }
+.ul-directory a:focus-visible, .ul-directory button:focus-visible,
+.ul-directory input:focus-visible, .ul-directory select:focus-visible, .ul-directory summary:focus-visible {
+  outline: 3px solid #e06b3d;
+  outline-offset: 2px;
+}
+.ul-header {
+  background: linear-gradient(125deg, #0b243d 10%, #103d62 64%, #155d70);
+  color: #fff;
+  border-radius: 20px;
+  padding: clamp(20px, 4vw, 46px);
+}
+.ul-heading > p { margin: 0 0 9px; font-size: .88rem; color: #cbe6fe; }
+.ul-heading h1 { margin: 0 0 18px; line-height: 1.13; font-size: clamp(1.7rem, 4vw, 3.15rem); letter-spacing: -.035em; }
+.ul-company { display: flex; flex-wrap: wrap; align-items: center; gap: 7px 18px; font-size: .9rem; }
+.ul-company a, .ul-company span { color: #e4f3ff; }
+.ul-summary { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 10px; margin: 15px 0 19px; }
+.ul-summary button {
+  display: grid;
+  gap: 3px;
+  text-align: left;
+  padding: 12px 13px;
+  min-width: 0;
+  border: 1px solid var(--ul-line);
+  border-radius: 12px;
+  color: var(--ul-text);
+  background: var(--ul-surface);
+}
+.ul-summary button strong { font-size: 1.48rem; line-height: 1.15; }
+.ul-summary button span { color: var(--ul-muted); font-size: .76rem; line-height: 1.35; }
+.ul-summary button[aria-pressed="true"] { outline: 2px solid var(--ul-link); outline-offset: -2px; background: var(--ul-control); }
+.ul-controls {
+  display: grid;
+  grid-template-columns: minmax(190px, 1.5fr) repeat(3, minmax(120px, 1fr));
+  gap: 13px;
+  padding: 14px;
+  border: 1px solid var(--ul-line);
+  border-radius: 13px;
+  background: var(--ul-surface);
+}
+.ul-controls label { display: grid; gap: 6px; min-width: 0; color: var(--ul-muted); font-size: .8rem; font-weight: 700; }
+.ul-controls input, .ul-controls select {
+  width: 100%;
+  min-width: 0;
+  min-height: 43px;
+  border: 1px solid var(--ul-line);
+  background: var(--ul-control);
+  color: var(--ul-text);
+  border-radius: 8px;
+  padding: 7px 8px;
+  font-family: inherit;
+  font-size: 1rem;
+}
+.ul-controls input::placeholder { color: var(--ul-muted); }
+.ul-toolbar { display:flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 6px 15px; margin: 12px 0; }
+.ul-toolbar p { margin: 0; color: var(--ul-muted); font-size: .85rem; font-weight: 650; }
+.ul-toolbar > div { display: flex; flex-wrap: wrap; gap: 7px; }
+.ul-toolbar button, .ul-actions button, .ul-actions a {
+  border: 1px solid var(--ul-line);
+  background: var(--ul-control);
+  border-radius: 7px;
+  color: var(--ul-link);
+  padding: 8px 10px;
+  display: inline-block;
+  font-size: .8rem;
+  font-weight: 650;
+  line-height: 1.3;
+  text-decoration: none;
+}
+.ul-toolbar button:hover, .ul-actions button:hover, .ul-actions a:hover { text-decoration: underline; }
+.ul-toolbar button:disabled { cursor: default; opacity: .5; }
+.ul-feedback { margin: 0; color: var(--ul-muted); font-size: .87rem; }
+.ul-feedback:not(:empty) { margin: 6px 0; }
+.ul-city { margin-top: 24px; }
+.ul-city h2 { display: flex; align-items: center; gap: 9px; margin: 0 0 9px; font-size: 1.22rem; }
+.ul-city h2 span { background: var(--ul-control); color: var(--ul-muted); padding: 4px 8px; font-size: .72rem; border-radius: 99px; }
+.ul-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 295px), 1fr)); gap: 10px; }
+.ul-card { display: flex; flex-direction: column; gap: 7px; min-width: 0; padding: 15px; border: 1px solid var(--ul-line); border-radius: 12px; background: var(--ul-surface); }
+.ul-card-top, .ul-actions { display: flex; flex-wrap: wrap; gap: 6px; }
+.ul-badge, .ul-tag { display: inline-flex; align-items: center; border-radius: 20px; padding: 4px 8px; font-size: .69rem; font-weight: 700; line-height: 1.2; }
+.ul-badge.ul-own { color: #075c55; background: #d9f4ed; }
+.ul-badge.ul-partner { color: #174b88; background: #e1edfd; }
+.ul-badge.ul-registry { color: #4c3d89; background: #ece7ff; }
+.ul-badge.ul-internal { color: #735016; background: #fdf0d1; }
+.ul-badge.ul-archive { color: #60555a; background: #eee8eb; }
+.ul-tag { color: var(--ul-muted); background: var(--ul-control); }
+.ul-card h3 { font-size: 1rem; line-height: 1.36; margin: 2px 0 0; }
+.ul-address { font-size: .93rem; font-weight: 600; margin: 0; color: var(--ul-text); }
+.ul-contact { margin: 0; font-size: .83rem; overflow-wrap: anywhere; }
+.ul-contact span, .ul-note, .ul-docs, .ul-empty { color: var(--ul-muted); }
+.ul-note { font-size: .8rem; margin: 0; line-height: 1.45; }
+.ul-docs { font-size: .8rem; overflow-wrap: anywhere; }
+.ul-docs summary { cursor: pointer; }
+.ul-docs ul { padding-inline-start: 21px; margin-bottom: 0; }
+.ul-actions { margin-top: auto; padding-top: 5px; }
+.ul-empty { padding: 16px; border: 1px dashed var(--ul-line); border-radius: 10px; }
+.ul-footer { color: var(--ul-muted); border-top: 1px solid var(--ul-line); margin: 24px 0 14px; padding-top: 12px; font-size: .79rem; line-height: 1.6; }
+.ul-footer p { margin: 5px 0 0; }
+.ul-copy-field { position: fixed; top: 0; left: 0; opacity: 0; pointer-events: none; }
+.ul-standalone { margin: 0; background: #f1f6fb; padding: clamp(12px, 3vw, 40px); }
+
+@media (max-width: 950px) {
+  .ul-controls { grid-template-columns: 1fr 1fr; }
+  .ul-summary { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 460px) {
+  .ul-search { grid-column: 1 / -1; }
+  .ul-summary { gap: 6px; }
+  .ul-summary button { padding: 8px; }
+  .ul-summary button span { font-size: .72rem; }
+  .ul-header { border-radius: 13px; }
+}

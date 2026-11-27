@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="sk" data-bozp-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Unilabs – Pobočky a pracoviská</title>
+  <link rel="stylesheet" href="directory.css">
+  <script defer src="data.js"></script>
+  <script defer src="directory.js"></script>
+</head>
+<body class="ul-standalone">
+  <main id="ul-page"><noscript>Na zobrazenie prehľadu povoľte JavaScript.</noscript></main>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelector('#ul-page').innerHTML = UnilabsDirectory.html();
+      UnilabsDirectory.mount(document.querySelector('#unilabs-directory'));
+    });
+  </script>
+</body>
+</html>
